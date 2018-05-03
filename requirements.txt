@@ -1,2 +1,3 @@
 Flask>=1.0.0
 Tweepy>=3.5.0
+TextBlob>=0.15.0
