@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify, Response, json
+from os import environ
 from analyze import *
 
 app = Flask(__name__)
@@ -25,5 +26,4 @@ def process():
     return jsonify({'error' : "Missing data. Ensure youve entered a valid search term."})
 
 if __name__ == "__main__":
-  from os import environ
     app.run(host='0.0.0.0', debug=False, port=environ.get("PORT", 5000))
