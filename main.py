@@ -25,4 +25,4 @@ def process():
     return jsonify({'error' : "Missing data. Ensure youve entered a valid search term."})
 
 if __name__ == "__main__":
-    app.run(host='https://evanmurrayseniorproject.herokuapp.com/', port=8080, debug=True)
+    app.run()
