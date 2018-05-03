@@ -1,0 +1,33 @@
+body{
+    text-align: center;
+}
+.text{
+    text-align: left!important;
+    display:inline-block;
+    max-width: 820px;
+}
+#content{
+    margin-top:10%;
+}
+#canvas{
+    height:415px;
+    width:90vw;
+    border: none;
+}
+#form{
+    margin-bottom: 20px;
+    float:none;
+}
+#loading-gif{
+    display:none;
+    width:356px;
+    height:356px;
+
+}
+.visible{
+    display:inline-block !important;
+
+}
+#error{
+    display:none;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Twitter Sentiment</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+  </head>
+  <body>
+    <div id="container" class="container-fluid h-100">
+      <div id="content" class="container w-100 h-100 d-flex justify-content-center">
+        <div class="my-auto justify-content-center">
+          <h3>Twitter Sentiment</h3>
+
+          <div class="prompt">
+          <p class="text">Entering a term into the search bar will gather tweets containing the term you entered and analyze the polarity of tweets the term was found in. The results will be displayed in a generated graph once the analysis is finished. Each dot on the graph represents a tweet. The color of the dot indicates the overall sentiment: green = positive, red = negative, gray = neutral. The dot is placed vertically based on the level of polarity.</p>
+          <form action="/process" role="form" id="form">
+            Enter a keyword: <input type="text" name="keyword" id="keyword" required>
+          <btn id="submit" class="btn btn-primary">Submit</btn>
+          </form>
+          </div>
+          
+          <div id="loading-gif" style="background-image: url({{ url_for('static', filename='ajax-loader.gif') }});"></div>
+          <div id="error" class="alert-danger"></div>
+          <canvas id="canvas"></canvas>
+        </div>
+        
+      </div>
+      
+    </div>
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script src="{{ url_for('static', filename='ajax.js')}}" type="text/javascript"></script>
+  <script src="{{ url_for('static', filename='visual.js')}}" type="text/javascript"></script>
+  
+  </body>
+</html>
